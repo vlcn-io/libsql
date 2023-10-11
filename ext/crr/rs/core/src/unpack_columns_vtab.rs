@@ -11,7 +11,7 @@ use sqlite::{Connection, Context, Value};
 use sqlite_nostd as sqlite;
 use sqlite_nostd::ResultCode;
 
-use crate::{unpack_columns, ColumnValue};
+use crate::pack_columns::{unpack_columns, ColumnValue};
 
 #[derive(Debug)]
 enum Columns {
@@ -253,7 +253,6 @@ static MODULE: sqlite_nostd::module = sqlite_nostd::module {
     xRelease: None,
     xRollbackTo: None,
     xShadowName: None,
-    xPreparedSql: None,
 };
 
 /**
